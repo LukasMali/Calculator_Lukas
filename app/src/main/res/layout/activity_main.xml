@@ -7,13 +7,254 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/background_color"
+        android:padding="16dp">
 
+        <!-- Expression Display (new TextView) -->
+        <TextView
+            android:id="@+id/expression"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textSize="20sp"
+            android:padding="8dp"
+            android:textColor="@color/display_text_color"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <!-- Main Display for Result -->
+        <TextView
+            android:id="@+id/display"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="end|bottom"
+            android:textSize="32sp"
+            android:padding="16dp"
+            android:background="@color/display_background_color"
+            android:text="@string/default_display_text"
+            android:textColor="@color/display_text_color"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <!-- Button Grid -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:rowCount="5"
+            android:columnCount="4"
+            android:layout_marginTop="16dp">
+
+            <!-- Top Row for additional functions -->
+            <Button
+                android:id="@+id/clear"
+                android:text="@string/clear"
+                style="@style/OperationButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="4dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1" />
+
+            <Button
+                android:id="@+id/sq_root"
+                android:text="@string/sq_root"
+                style="@style/OperationButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="4dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1" />
+
+            <Button
+                android:id="@+id/plus_minus"
+                android:text="@string/plus_minus"
+                style="@style/OperationButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="4dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1" />
+
+            <Button
+                android:id="@+id/delete"
+                android:text="@string/delete"
+                style="@style/OperationButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="4dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1" />
+
+            <!-- Row for 7, 8, 9, and division -->
+            <Button
+                android:id="@+id/seven"
+                android:text="@string/seven"
+                style="@style/CalculatorButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="4dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1" />
+
+            <Button
+                android:id="@+id/eight"
+                android:text="@string/eight"
+                style="@style/CalculatorButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="4dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1" />
+
+            <Button
+                android:id="@+id/nine"
+                android:text="@string/nine"
+                style="@style/CalculatorButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="4dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1" />
+
+            <Button
+                android:id="@+id/divide"
+                android:text="@string/divide"
+                style="@style/OperationButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="4dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1" />
+
+            <!-- Row for 4, 5, 6, and multiplication -->
+            <Button
+                android:id="@+id/four"
+                android:text="@string/four"
+                style="@style/CalculatorButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="4dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1" />
+
+            <Button
+                android:id="@+id/five"
+                android:text="@string/five"
+                style="@style/CalculatorButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="4dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1" />
+
+            <Button
+                android:id="@+id/six"
+                android:text="@string/six"
+                style="@style/CalculatorButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="4dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1" />
+
+            <Button
+                android:id="@+id/multiply"
+                android:text="@string/multiply"
+                style="@style/OperationButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="4dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1" />
+
+            <!-- Row for 1, 2, 3, and subtraction -->
+            <Button
+                android:id="@+id/one"
+                android:text="@string/one"
+                style="@style/CalculatorButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="4dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1" />
+
+            <Button
+                android:id="@+id/two"
+                android:text="@string/two"
+                style="@style/CalculatorButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="4dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1" />
+
+            <Button
+                android:id="@+id/three"
+                android:text="@string/three"
+                style="@style/CalculatorButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="4dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1" />
+
+            <Button
+                android:id="@+id/subtract"
+                android:text="@string/subtract"
+                style="@style/OperationButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="4dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1" />
+
+            <!-- Row for 0, decimal, equals, and addition -->
+            <Button
+                android:id="@+id/zero"
+                android:text="@string/zero"
+                style="@style/CalculatorButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="4dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1" />
+
+            <Button
+                android:id="@+id/decimal"
+                android:text="@string/decimal"
+                style="@style/CalculatorButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="4dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1" />
+
+            <Button
+                android:id="@+id/equal"
+                android:text="@string/equal"
+                style="@style/EqualsButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="4dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1" />
+
+            <Button
+                android:id="@+id/add"
+                android:text="@string/add"
+                style="@style/OperationButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="4dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1" />
+
+        </GridLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
